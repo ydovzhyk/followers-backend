@@ -8,7 +8,7 @@ const router = express.Router();
 
 router.post("/add", validate(addUser), ctrlWrapper(ctrl.addUserData));
 
-router.post("/", ctrlWrapper(ctrl.getUsers));
+router.post("/", validateBody(userData), ctrlWrapper(ctrl.getUsers));
 
 router.post("/follower", ctrlWrapper(ctrl.getFollower));
 

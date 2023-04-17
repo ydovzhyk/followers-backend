@@ -34,9 +34,8 @@ const User = model("user", userSchema);
 
 const addUser = Joi.object({
   user: Joi.string().required(),
-  tweets: Joi.number().required(),
-  followers: Joi.number().required(),
-  avatar: Joi.string(),
+  tweets: Joi.number().required().min(0).max(1000000),
+  followers: Joi.number().required().min(0).max(1000000),
 });
 
 const followUser = Joi.object({
@@ -47,8 +46,8 @@ const followUser = Joi.object({
 
 const userData = Joi.object({
   followerId: Joi.string().required(),
-  page: Joi.string().required(),
-  filter: Joi.string().required(),
+  page: Joi.number().required(),
+  filter: Joi.string().valid("show all", "follow", "following").required(),
 });
 
 module.exports = { User, addUser, followUser, userData };
