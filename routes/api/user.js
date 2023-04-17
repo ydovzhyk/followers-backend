@@ -10,7 +10,7 @@ router.post("/add", validate(addUser), ctrlWrapper(ctrl.addUserData));
 
 router.post("/", ctrlWrapper(ctrl.getUsers));
 
-router.post("/follower", validateBody(userData), ctrlWrapper(ctrl.getFollower));
+router.post("/follower", ctrlWrapper(ctrl.getFollower));
 
 router.post("/update", validateBody(followUser), ctrlWrapper(ctrl.updateUser));
 
