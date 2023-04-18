@@ -5,8 +5,8 @@ const addUserData = async (req, res, next) => {
   function getRandomInt(min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
   }
-  let data = getRandomInt(1, 50);
-  let subData = getRandomInt(1, 50);
+  let data = getRandomInt(2, 35);
+  let subData = getRandomInt(3, 35);
   const avatarUrl = `https://robohash.org/${Math.random()
     .toString(data)
     .substring(subData)}.png?size=100x100`;
